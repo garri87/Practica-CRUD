@@ -1,0 +1,24 @@
+{%include 'empleados/header.html'%}
+
+<h1>Editar Empleado</h1>
+
+<form class="mb-3" method="POST" action="/update" enctype="multipart/form-data">
+
+    <label for="txtID">ID</label>
+    <input type="text" value="{{empleados[0][0] }}" name="txtID" id="txtID" readonly>
+
+    <label for="txtNombre">Nombre:</label>
+    <input type="text" value="{{empleados[0][1] }}" name="txtNombre" id="txtNombre">
+    <br>
+    <label for="txtCorreo">correo:</label>
+    <input type="email" value="{{empleados[0][2] }}" name="txtCorreo" id="txtCorreo">
+    <br>
+    <label for="txtFoto">Foto: <img src="{{url_for('uploads', nombreFoto=empleados[0][3])}}" class="fotoEmpleado" alt=""> {{empleados[0][3] }}"</label>
+    <input type="file" name="txtFoto" id="txtFoto">
+    <br>
+    <button class="btn btn-primary" type="submit" value="Guardar"> Guardar </button>
+
+</form>
+
+
+{%include 'empleados/footer.html'%}
